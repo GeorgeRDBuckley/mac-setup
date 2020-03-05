@@ -135,9 +135,6 @@ chflags nohidden ~/Library
 
 # Add ~/ and ~/Projects directories to Finder sidebar
 mkdir -p ~/Projects
-# FIXME: mysides does not seem to be supported
-#mysides add David file:///Users/david
-#mysides add Projects file:///Users/david/Projects
 
 # -----------
 # Dock

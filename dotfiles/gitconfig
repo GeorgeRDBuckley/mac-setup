@@ -122,9 +122,9 @@
 	verbose = true
 [core]
 	whitespace = fix,-indent-with-non-tab,trailing-space
-	excludesfile = /Users/david/.gitignore
+	excludesfile = /Users/georgebuckley/.gitignore
 	preloadindex = true
-	attributesfile = /Users/david/.gitattributes
+	attributesfile = /Users/georgebuckley/.gitattributes
   editor = "mate -w"
 [credential]
 	helper = osxkeychain
@@ -202,8 +202,8 @@
 	pushInsteadOf = gitlab:
 	pushInsteadOf = git://gitlab.com/
 [user]
-	name = David Young
-	email = davie668@gmail.com
+	name = George Buckley
+	email = g.buckley@live.com
 	useconfigonly = true
 [filter "lfs"]
 	process = git-lfs filter-process

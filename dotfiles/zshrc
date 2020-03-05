@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/david/.oh-my-zsh"
+export ZSH="/Users/georgebuckley/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="dy-term"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -115,9 +115,28 @@ if [[ -d $asdf_dir ]]; then
   source $asdf_dir/asdf.sh
 fi
 
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+ssh-add ~/.ssh/id_rsa
+
 export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
 
 # add ~/.zsh_functions to fpath, and then lazy autoload
 # every file in there as a function
 fpath=( ~/.zsh_functions "${fpath[@]}" )
 autoload -Uz rails_new
+
+alias kill3000="kill -9 $(lsof -i:3000 -t)"
+plugins=(rails git ruby)
+export ALIEN_THEME="soft"
+source ~/alien/alien.zsh
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-L/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
+eval "$(rbenv init -)"
