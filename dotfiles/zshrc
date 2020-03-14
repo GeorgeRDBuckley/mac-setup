@@ -76,6 +76,7 @@ plugins=(
   ruby
   zsh-syntax-highlighting
   zsh-autosuggestions
+  rails
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -127,16 +128,7 @@ fpath=( ~/.zsh_functions "${fpath[@]}" )
 autoload -Uz rails_new
 
 alias kill3000="kill -9 $(lsof -i:3000 -t)"
-plugins=(rails git ruby)
 export ALIEN_THEME="soft"
 source ~/alien/alien.zsh
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-L/usr/local/opt/openssl@1.1/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
+source /usr/local/opt/asdf/asdf.sh

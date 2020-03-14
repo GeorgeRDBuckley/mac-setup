@@ -277,7 +277,6 @@ echo ""
 
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "ControlStrip" "cfprefsd" \
-  "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-  "Terminal"; do
+  "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer"; do
   killall "${app}" > /dev/null 2>&1
 done

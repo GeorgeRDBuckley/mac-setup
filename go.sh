@@ -31,10 +31,13 @@ sh "./apps/appstore.sh"
 echo "--- Creating ~/Projects folder ---"
 mkdir ~/Projects >/dev/null 2>&1
 
+echo "--- Configure asdf ---"
+sh "./config/asdf.sh"
+
 echo "--- Install Ruby ---"
 if ruby -v | grep "2.7.0" >/dev/null 2>&1 ; then
   echo "Ruby 2.7.0 is already installed"
 else
   echo "Ruby 2.7.0 is not installed, installing..."
-  ruby-install ruby-2.7.0
+  asdf install ruby 2.7.0
 fi

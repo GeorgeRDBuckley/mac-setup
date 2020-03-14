@@ -12,7 +12,6 @@ sh "./dependencies/ssh.sh"
 echo "--- Installing Command Line Tools for Xcode ---"
 sh "./dependencies/command_line_tools.sh"
 
-
 # Configure macOS defaults
 echo "--- Set computer name ---"
 sh "./config/name.sh"

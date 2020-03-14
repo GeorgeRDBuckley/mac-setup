@@ -23,7 +23,6 @@ brew analytics off
 
 packages=(
   asdf
-  chruby
   coreutils
   fzf
   git
@@ -31,7 +30,6 @@ packages=(
   graphicsmagick
   heroku
   hugo
-  mariadb@10.2
   mas
   neovim
   node
@@ -49,7 +47,6 @@ packages=(
 
 casks=(
   1password
-  alfred
   firefox
   font-cascadia
   font-fira-code
@@ -65,8 +62,6 @@ casks=(
   suspicious-package
   the-unarchiver
   viscosity
-  visual-studio-code
-  zoomus
 )
 
 echo "--- Installing Homebrew packages ---"
@@ -82,12 +77,7 @@ done
 
 echo "--- Starting Redis, MariaDB and PostgreSQL as services ---"
 brew services start redis
-brew services start mariadb@10.2
 brew services start postgresql
-
-echo "--- Sourcing chruby ---"
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
 
 echo "--- Installing mas-cli ---"
 if brew info mas >/dev/null 2>&1; then
@@ -108,7 +98,3 @@ do
     brew cask install "$package"
   fi
 done
-
-echo "--- Fix MariaDB config folder ---"
-mkdir /usr/local/etc/my.cnf.d
-touch /usr/local/etc/my.cnf.d/.keep
