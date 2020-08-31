@@ -23,7 +23,6 @@ brew analytics off
 
 packages=(
   asdf
-  chruby
   coreutils
   fzf
   git
@@ -37,7 +36,6 @@ packages=(
   node
   postgresql
   redis
-  ruby-install
   shellcheck
   ssh-copy-id
   tmux
@@ -54,18 +52,14 @@ casks=(
   font-cascadia
   font-fira-code
   font-fontawesome
-  google-chrome
   iterm2
   jetbrains-toolbox
-  macdown
   ngrok
   rectangle
   sequel-pro
   slack
   suspicious-package
   the-unarchiver
-  viscosity
-  visual-studio-code
   zoomus
 )
 
@@ -85,9 +79,12 @@ brew services start redis
 brew services start mariadb@10.2
 brew services start postgresql
 
-echo "--- Sourcing chruby ---"
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+echo "--- Adding ASDF Ruby plugin ---"
+asdf plugin-add ruby
+
+echo "--- Adding sources ---"
+echo 'source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
 
 echo "--- Installing mas-cli ---"
 if brew info mas >/dev/null 2>&1; then
