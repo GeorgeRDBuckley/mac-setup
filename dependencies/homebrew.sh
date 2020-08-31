@@ -26,6 +26,8 @@ packages=(
   coreutils
   fzf
   git
+  gnupg
+  gnupg2
   gpg
   graphicsmagick
   heroku
